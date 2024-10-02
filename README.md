@@ -58,3 +58,42 @@ The aim of this project is to predict whether individuals have a drinking habit 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/your-repo/KNN-NaiveBayes-Prediction.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd KNN-NaiveBayes-Prediction
+   ```
+3. **Create a Virtual Environment**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # For Linux/Mac
+   # On Windows:
+   # venv\Scripts\activate
+   ```
+4. **Install Dependencies:**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. **Run the Project**:
+   ```bash
+   python src/components/model_evaluation.py
+   ```
+6. **Check the Output**:
+   - The best-performing model and the corresponding accuracy scores will be printed.
+## Project Structure
+   ```bash
+KNN-NaiveBayes-Prediction/
+│
+├── Src/
+│   ├── Components/
+│   │   ├── dataload.py
+│   │   ├── datatransformation.py
+│   │   ├── modeltraining.py
+│   │   └── modelevaluation.py
+│   └── Utils.py
+│
+├── artifacts/              # Folder where train/test splits are saved
+├── README.md               # Project documentation
+├── requirements.txt        # Python dependencies
+└── data/                   # Dataset used for training/testing
+   ```

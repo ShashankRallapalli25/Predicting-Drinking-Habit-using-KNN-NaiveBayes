@@ -24,7 +24,7 @@ def get_preprocessed_data():
     y_train = pd.read_csv('artifacts/y_train.csv')
     y_test = pd.read_csv('artifacts/y_test.csv')
     
-    X_train_scaled, X_test_scaled = preprocess_data(X_train, X_test)
+    #X_train_scaled, X_test_scaled = preprocess_data(X_train, X_test)
     y_train_encoded, y_test_encoded = encode_labels(y_train, y_test)
     
-    return X_train_scaled, X_test_scaled, y_train_encoded, y_test_encoded
+    return X_train, X_test, y_train_encoded, y_test_encoded

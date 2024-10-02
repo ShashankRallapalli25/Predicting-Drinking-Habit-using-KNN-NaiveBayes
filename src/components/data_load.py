@@ -8,8 +8,8 @@ def load_data(file_path):
 
 def split_data(dataset, test_size=0.3, random_state=42):
     """Splits the dataset into training and testing sets."""
-    X = dataset.drop("target", axis=1)  # Assuming 'target' is the label column
-    y = dataset['target']
+    X = dataset.drop("DRK_YN", axis=1)  # Assuming 'target' is the label column
+    y = dataset['DRK_YN']
     return train_test_split(X, y, test_size=test_size, random_state=random_state)
 
 def save_split_data(X_train, X_test, y_train, y_test, artifacts_dir='artifacts'):

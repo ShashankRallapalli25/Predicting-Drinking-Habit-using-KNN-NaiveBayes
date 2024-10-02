@@ -1,5 +1,6 @@
 from sklearn.metrics import accuracy_score
 from .data_transformation import get_preprocessed_data
+from .data_load import save_split_data, load_data, split_data
 from .Model_training import train_logistic, train_random_forest, train_knn, train_naive_bayes
 
 def evaluate_model(model, X_test, y_test):
@@ -7,9 +8,12 @@ def evaluate_model(model, X_test, y_test):
     return accuracy_score(y_test, y_pred)
 
 def main():
+    dataset = load_data("artifacts/smoking_driking_dataset_Ver01.csv")
+    X_train, X_test, y_train, y_test = split_data(dataset)
+    save_split_data(X_train, X_test, y_train, y_test)
     X_train, X_test, y_train, y_test = get_preprocessed_data()
-    
-    # Train models
+    #Train models
+    y_train = y_train.values.ravel()  #y_train = y_train.values.flatten()
     logistic_model = train_logistic(X_train, y_train)
     rf_model = train_random_forest(X_train, y_train)
     knn_model = train_knn(X_train, y_train)

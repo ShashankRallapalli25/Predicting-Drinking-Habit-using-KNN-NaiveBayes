@@ -13,7 +13,7 @@ def main():
     save_split_data(X_train, X_test, y_train, y_test)
     X_train, X_test, y_train, y_test = get_preprocessed_data()
     #Train models
-    y_train = y_train.values.ravel()  #y_train = y_train.values.flatten()
+    y_train = y_train.ravel()  #y_train = y_train.values.flatten()
     logistic_model = train_logistic(X_train, y_train)
     rf_model = train_random_forest(X_train, y_train)
     knn_model = train_knn(X_train, y_train)
